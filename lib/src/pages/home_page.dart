@@ -48,11 +48,11 @@ class HomePage extends StatelessWidget {
           color: Colors.blueGrey.shade900,
         ),
         onTap: () {
+          Navigator.pushNamed(context, element['ruta']);
           //? Creando una variable que contenga la ruta de navegacion
-          final route =
-              MaterialPageRoute(builder: (context) => const AlertPage());
-
-          Navigator.push(context, route);
+          //? final route =
+          //?    MaterialPageRoute(builder: (context) => const AlertPage());
+          //? Navigator.push(context, route);
         },
       );
       opciones

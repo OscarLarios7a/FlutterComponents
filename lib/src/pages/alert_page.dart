@@ -7,12 +7,19 @@ class AlertPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.dangerous,
-          color: Colors.red.shade800,
-        ),
-        centerTitle: true,
-        title: Text('Alert Page'),
+          // leading: Icon(
+          //   Icons.dangerous,
+          //   color: Colors.red.shade800,
+          // ),
+          centerTitle: true,
+          title: const Text(
+            'Alert Page',
+          )),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add_location),
+        onPressed: () {
+          Navigator.pop(context);
+        },
       ),
     );
   }
