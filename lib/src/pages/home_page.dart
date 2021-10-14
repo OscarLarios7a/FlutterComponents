@@ -1,7 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:componentes/src/pages/providers/menu_provider.dart';
 import 'package:componentes/src/utils/icons_string_util.dart';
+
+import 'alert_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,8 +26,8 @@ class HomePage extends StatelessWidget {
       builder: (context, AsyncSnapshot<List<dynamic>?> snapshot) {
         if (snapshot.hasData) {
           return ListView(
-            children: _listaItems(
-                snapshot.data), //se agrega el ! para la cuestion de Null Safety
+            children: _listaItems(snapshot.data,
+                context), //se agrega el ! para la cuestion de Null Safety
           );
         }
         return const SizedBox();
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  List<Widget> _listaItems(List<dynamic>? data) {
+  List<Widget> _listaItems(List<dynamic>? data, BuildContext context) {
     final List<Widget> opciones = [];
 
     //for (var element in data!) {
@@ -46,7 +47,13 @@ class HomePage extends StatelessWidget {
           Icons.arrow_right,
           color: Colors.blueGrey.shade900,
         ),
-        onTap: () {},
+        onTap: () {
+          //? Creando una variable que contenga la ruta de navegacion
+          final route =
+              MaterialPageRoute(builder: (context) => const AlertPage());
+
+          Navigator.push(context, route);
+        },
       );
       opciones
         ..add(widgetTemp)
