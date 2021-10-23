@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
     /*Se utilizara un metodo FutureBuilder */
     return FutureBuilder(
       future: menuProvider.cargarData(),
-      //initialData: [],
+      initialData: [],
       builder: (context, AsyncSnapshot<List<dynamic>?> snapshot) {
         if (snapshot.hasData) {
           return ListView(
@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
     final List<Widget> opciones = [];
 
     //for (var element in data!) {
-    data!.forEach((element) {
+    for (var element in data!) {
       final widgetTemp = ListTile(
         title: Text(element['texto']),
         leading: getIcon(element['icon']),
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
         ..add(Divider(
           color: Colors.green.shade900,
         ));
-    });
+    }
 
     return opciones;
   }
