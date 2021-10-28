@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:componentes/src/pages/providers/menu_provider.dart';
 import 'package:componentes/src/utils/icons_string_util.dart';
 
-import 'alert_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
