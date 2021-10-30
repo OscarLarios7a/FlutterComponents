@@ -10,6 +10,7 @@ class SliderPage extends StatefulWidget {
 class _SliderPageState extends State<SliderPage> {
   double _valorSlider = 100.00;
   bool _bloquearCheck = false;
+  bool _bloquearSwitch = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +40,7 @@ class _SliderPageState extends State<SliderPage> {
         value: _valorSlider,
         min: 10.00,
         max: 400.00,
-        onChanged: (_bloquearCheck)
-            ? null
+        onChanged: (_bloquearCheck)? null : (_bloquearSwitch)?  null 
             : (valor) {
                 setState(() {
                   _valorSlider = valor;
@@ -79,28 +79,28 @@ class _SliderPageState extends State<SliderPage> {
       checkColor: Colors.amber.shade700,
       title: const Text('Bloquear Slider'),
       value: _bloquearCheck,
-          onChanged: (valor) {
-            setState(() {
-              _bloquearCheck = valor!;
-            });
-          },
-      );
+      onChanged: (valor) {
+        setState(() {
+          _bloquearCheck = valor!;
+        });
+      },
+    );
   }
 
- Widget _crearSwitch() {
-   return SwitchListTile(
+  Widget _crearSwitch() {
+    return SwitchListTile(
       //tileColor: Colors.amberAccent,
       activeColor: Colors.black54,
       //selectedTileColor: Colors.black54,
       contentPadding: EdgeInsets.all(5.00),
       //checkColor: Colors.amber.shade700,
       title: const Text('Bloquear Slider'),
-      value: _bloquearCheck,
+      value: _bloquearSwitch,
       onChanged: (valor) {
         setState(() {
-          _bloquearCheck = valor;
+          _bloquearSwitch = valor;
         });
       },
     );
- }
+  }
 }
