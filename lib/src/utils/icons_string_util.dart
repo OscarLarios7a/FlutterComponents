@@ -9,6 +9,7 @@ final _icons = <String, IconData>{
   "donut_large" : Icons.donut_large,
   "input": Icons.input,
   "tune": Icons.tune_rounded,
+  'list': Icons.list
 };
 
 //Creo mi metodo de getIcon para la manipulacion de los iconos
