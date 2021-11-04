@@ -95,11 +95,11 @@ class _ListPageState extends State<ListPage> {
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: const <Widget>[
               CircularProgressIndicator()
             ],
           ),
-          SizedBox(height: 15.00,)
+          const SizedBox(height: 15.00,)
         ],
       );
     } else {
